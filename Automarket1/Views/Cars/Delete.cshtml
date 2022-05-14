@@ -34,10 +34,15 @@
     <div>
          <p class="text-danger">@ViewData["ErrorMessage"]</p>
     </div> 
+    <p>
 
+    </p>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Видалити" class="btn btn-danger" /> |
-        <a asp-action="Index">Повернутися до списку</a>
+        <input type="submit" value="Видалити" class="btn btn-danger" />
+        <p>
+
+        </p>
+        <a asp-action="Index"><button type="button" class="btn btn-outline-primary">Повернутися до списку</button></a>
     </form>
 </div>

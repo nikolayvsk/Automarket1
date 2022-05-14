@@ -18,11 +18,17 @@
                 <input asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
+            <p>
+
+            </p>
             <div class="form-group">
                 <label asp-for="DateBirth" class="control-label"></label>
                 <input asp-for="DateBirth" class="form-control" />
                 <span asp-validation-for="DateBirth" class="text-danger"></span>
             </div>
+            <p>
+
+            </p>
             <div class="form-group">
                 <label asp-for="PassportNumber" class="control-label"></label>
                 <input asp-for="PassportNumber" class="form-control" />
@@ -40,10 +46,15 @@
             <div>
             <p class="text-danger">@ViewData["ErrorMessage_Phone"]</p>
             </div>
+            <p>
 
+            </p>
             <div class="form-group">
                 <input type="submit" value="Зберегти" class="btn btn-primary" />
             </div>
+            <p>
+
+            </p>
         </form>
     </div>
 </div>
@@ -53,7 +64,7 @@
 </div> 
 
 <div>
-    <a asp-action="Index">Повернутися до списку</a>
+    <a asp-action="Index"><button type="button" class="btn btn-outline-primary">Повернутися до списку</button></a>
 </div>
 
 @section Scripts {

@@ -1,10 +1,10 @@
 ﻿@model Automarket1.Model
 
 @{
-    ViewData["Title"] = "Створити модель";
+    ViewData["Title"] = "Створення моделі";
 }
 
-<h1>Створити модель</h1>
+<h1>Створення моделі</h1>
 
 <h4>Модель</h4>
 <hr />
@@ -20,16 +20,21 @@
             <div>
             <p class="text-danger">@ViewData["ErrorMessage"]</p>
             </div>
+            <p>
 
+            </p>
             <div class="form-group">
                 <input type="submit" value="Створити" class="btn btn-primary" />
             </div>
+            <p>
+
+            </p>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Повернутися до списку</a>
+    <a asp-action="Index"><button type="button" class="btn btn-outline-primary">Повернутися до списку</button></a>
 </div>
 
 @section Scripts {

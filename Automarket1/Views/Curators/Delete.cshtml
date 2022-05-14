@@ -24,10 +24,18 @@
             @Html.DisplayFor(model => model.Sale.Id)
         </dd>
     </dl>
-    
+    <p>
+
+    </p>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Видалити" class="btn btn-danger" /> |
-        @Html.ActionLink("Повернутися до списку","Index", new {id = Model.EmployeeId})
+
+        <input type="submit" value="Видалити" class="btn btn-danger" />
+        <p>
+
+        </p>
+        <p>
+        @Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.EmployeeId, name = ViewBag.EmployeeFullName}, new {@class = "btn btn-outline-primary"})
+        </p>
     </form>
 </div>

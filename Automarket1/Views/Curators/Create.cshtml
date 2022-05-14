@@ -12,16 +12,26 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <p>
+
+            </p>
             <div class="form-group">
                 <label asp-for="SaleId" class="control-label"></label>
                 <select asp-for="SaleId" class ="form-control" asp-items="ViewBag.SaleId"></select>
             </div>
+            <p>
 
+            </p>
             <input type="hidden" value="@ViewBag.EmployeeId" name="EmployeeId" />
+            <p>
 
+            </p>
             <div class="form-group">
                 <input type="submit" value="Створити" class="btn btn-primary" />
             </div>
+            <p>
+
+            </p>
         </form>
     </div>
 </div>
@@ -29,9 +39,9 @@
 <div>
 <p class="text-danger">@ViewData["ErrorMessage"]</p>
 </div> 
-
-@Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.EmployeeId, name = ViewBag.EmployeeFullName})
-
+<p>
+@Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.EmployeeId, name = ViewBag.EmployeeFullName}, new {@class = "btn btn-outline-primary"})
+</p>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

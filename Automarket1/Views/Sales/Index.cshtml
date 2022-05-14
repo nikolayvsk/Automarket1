@@ -7,7 +7,7 @@
 <h1>Продажі клієнту @ViewBag.CustomerFullName </h1>
 
 <p>
-    @Html.ActionLink("Додати новий продаж", "Create", new {customerId = @ViewBag.CustomerId})
+    @Html.ActionLink("Додати новий продаж", "Create", new {customerId = @ViewBag.CustomerId}, new {@class = "btn btn-success"})
 </p>
 <table class="table">
     <thead>
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Customer.FullName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Редагувати</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Деталі</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Видалити</a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><button type ="button" class ="btn btn-warning">Редагувати</button></a>
+                <a asp-action="Details" asp-route-id="@item.Id"><button type ="button" class ="btn btn-info">Деталі</button></a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><button type ="button" class ="btn btn-danger">Видалити</button></a>
             </td>
         </tr>
 }

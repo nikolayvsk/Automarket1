@@ -1,10 +1,10 @@
 ﻿@model Automarket1.Sale
 
 @{
-    ViewData["Title"] = "Створити продаж";
+    ViewData["Title"] = "Створення продажу";
 }
 
-<h1>Додавання нпродажу до клієнта @ViewBag.CustomerFullName</h1>
+<h1>Додавання продажу до клієнта @ViewBag.CustomerFullName</h1>
 
 <h4>Продаж</h4>
 <hr />
@@ -12,6 +12,9 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>  
+            <p>
+
+            </p>
             <div class="form-group">
                 <label asp-for="CarId" class="control-label"></label>
                 <select asp-for="CarId" class ="form-control" asp-items="ViewBag.CarId"></select>
@@ -19,18 +22,27 @@
             <div>
             <p class="text-danger">@ViewData["ErrorMessage_Car"]</p>
             </div> 
+            <p>
 
+            </p>
             <div class="form-group">
                 <label asp-for="DateSale" class="control-label"></label>
                 <input asp-for="DateSale" class="form-control" />
                 <span asp-validation-for="DateSale" class="text-danger"></span>
             </div>
+            <p>
 
+            </p>
             <input type ="hidden" value = "@ViewBag.CustomerId" name = "CustomerId" />
+            <p>
 
+            </p>
             <div class="form-group">
                 <input type="submit" value="Створити" class="btn btn-primary" />
             </div>
+            <p>
+
+            </p>
         </form>
     </div>
 </div>
@@ -39,7 +51,9 @@
 <p class="text-danger">@ViewData["ErrorMessage"]</p>
 </div> 
 
-@Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.CustomerId, name = ViewBag.CustomerFullName})
+<p>
+@Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.EmployeeId, name = ViewBag.EmployeeFullName}, new {@class = "btn btn-outline-primary"})
+</p>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

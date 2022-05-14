@@ -36,7 +36,9 @@
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
     </dl>
-    
+    <p>
+
+    </p>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Видалити" class="btn btn-danger" />
@@ -44,7 +46,11 @@
         <div>
         <p class="text-danger">@ViewData["ErrorMessage"]</p>
         </div>
+        <p>
 
-        <a asp-action="Index">Повернутися до списку</a>
+        </p>
+        <div>
+        <a asp-action="Index"><button type="button" class="btn btn-outline-primary">Повернутися до списку</button></a>
+        </div>
     </form>
 </div>

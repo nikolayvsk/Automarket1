@@ -30,7 +30,15 @@
         </dd>
     </dl>
 </div>
+<p>
+
+            </p>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Редагувати</a> |
-    @Html.ActionLink("Повернутися до списку","Index", new {id = Model.CustomerId})
+    <a asp-action="Edit" asp-route-id="@Model?.Id"><button type="button" class="btn btn-outline-warning">Редагувати</button></a>
+    <p>
+
+            </p>
+    <p>
+    @Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.EmployeeId, name = ViewBag.EmployeeFullName}, new {@class = "btn btn-outline-primary"})
+    </p>
 </div>

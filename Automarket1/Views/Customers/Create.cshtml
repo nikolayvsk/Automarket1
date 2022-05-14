@@ -1,10 +1,10 @@
 ﻿@model Automarket1.Customer
 
 @{
-    ViewData["Title"] = "Cтворити нового клієнта";
+    ViewData["Title"] = "Додавання клієнта";
 }
 
-<h1>Створити нового клієнта</h1>
+<h1>Додавання клієнта</h1>
 
 <h4>Клієнти</h4>
 <hr />
@@ -17,11 +17,17 @@
                 <input asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
+            <p>
+
+            </p>
             <div class="form-group">
                 <label asp-for="DateBirth" class="control-label"></label>
                 <input asp-for="DateBirth" class="form-control" />
                 <span asp-validation-for="DateBirth" class="text-danger"></span>
             </div>
+            <p>
+
+            </p>
             <div class="form-group">
                 <label asp-for="PassportNumber" class="control-label"></label>
                 <input asp-for="PassportNumber" class="form-control" />
@@ -41,11 +47,15 @@
             <div>
             <p class="text-danger">@ViewData["ErrorMessage_Phone"]</p>
             </div> 
+            <p>
 
-
+            </p>
             <div class="form-group">
                 <input type="submit" value="Створити" class="btn btn-primary" />
             </div>
+            <p>
+
+            </p>
         </form>
     </div>
 </div>
@@ -56,7 +66,7 @@
 
 
 <div>
-    <a asp-action="Index">Повернутися до списку</a>
+    <a asp-action="Index"><button type="button" class="btn btn-outline-primary">Повернутися до списку</button></a>
 </div>
 
 @section Scripts {
