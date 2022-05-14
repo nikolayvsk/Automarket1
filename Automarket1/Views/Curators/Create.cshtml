@@ -1,0 +1,37 @@
+﻿@model Automarket1.Curator
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Призначення працівника куратором @ViewBag.EmployeeFullName</h1>
+
+<h4>Куратори</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SaleId" class="control-label"></label>
+                <select asp-for="SaleId" class ="form-control" asp-items="ViewBag.SaleId"></select>
+            </div>
+
+            <input type="hidden" value="@ViewBag.EmployeeId" name="EmployeeId" />
+
+            <div class="form-group">
+                <input type="submit" value="Створити" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+</div> 
+
+@Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.EmployeeId, name = ViewBag.EmployeeFullName})
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,46 @@
+﻿@model Automarket1.Sale
+
+@{
+    ViewData["Title"] = "Створити продаж";
+}
+
+<h1>Додавання нпродажу до клієнта @ViewBag.CustomerFullName</h1>
+
+<h4>Продаж</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>  
+            <div class="form-group">
+                <label asp-for="CarId" class="control-label"></label>
+                <select asp-for="CarId" class ="form-control" asp-items="ViewBag.CarId"></select>
+            </div>
+            <div>
+            <p class="text-danger">@ViewData["ErrorMessage_Car"]</p>
+            </div> 
+
+            <div class="form-group">
+                <label asp-for="DateSale" class="control-label"></label>
+                <input asp-for="DateSale" class="form-control" />
+                <span asp-validation-for="DateSale" class="text-danger"></span>
+            </div>
+
+            <input type ="hidden" value = "@ViewBag.CustomerId" name = "CustomerId" />
+
+            <div class="form-group">
+                <input type="submit" value="Створити" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+</div> 
+
+@Html.ActionLink("Повернутися до списку","Index", new {id = ViewBag.CustomerId, name = ViewBag.CustomerFullName})
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
