@@ -20,9 +20,10 @@ namespace Automarket1
         [MinLength(5, ErrorMessage = "Замало символів - не менше {1} символів")]
         [MaxLength(50)]
         public string SerialNumber { get; set; } = null!;
+        
 
-        [Range(0, int.MaxValue, ErrorMessage = "{0} повинен від {1}")]
         [DisplayFormat(DataFormatString = "{0:# ₴}")]
+        [RegularExpression("^[1-9][0-9]*$", ErrorMessage = "Тільки додатні цілі числа")]
         [Display(Name = "Ціна")]
         [Required(ErrorMessage = "Не залишай мене порожнім! :)")]
         public decimal Price { get; set; }
