@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Лабораторна робота 2";
 }
 
+@if(User.Identity.IsAuthenticated)
+{
+<p>@User.Identity.Name</p>
+
+<form method="post" asp-controller="Account" asp-action="Logout">
+    @* <input type="submit" value="Вихід" />*@
+     <button class="btn btn-outline-danger"> Вихід </button>
+   @* <button type="button" class="btn btn-outline-danger">Вихід</button*@
+</form>
+}
+else
+{
+<a asp-controller="Account" asp-action="Login"><button class="btn btn-outline-success"> Вхід </button></a>
+<a asp-controller="Account" asp-action="Register"><button class="btn btn-outline-warning"> Реєстрація </button></a>
+}
+<p></p>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">🚘 | Юний автосалон | 🇺🇦</h1>
+    <p><iframe src="https://giphy.com/embed/EzPcW7ee0cPRYBCkv4" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>Коняка справжня</a></p></p>
 </div>

@@ -42,11 +42,20 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id"><button type ="button" class ="btn btn-warning">Редагувати</button></a>
-                <a asp-action="Details" asp-route-id="@item.Id"><button type ="button" class ="btn btn-info">Деталі</button></a>
-                <a asp-action="Delete" asp-route-id="@item.Id"><button type ="button" class ="btn btn-danger">Видалити</button></a>
-            </td>
+            @if (User.IsInRole("admin"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><button type ="button" class ="btn btn-warning">Редагувати</button></a>
+                        <a asp-action="Details" asp-route-id="@item.Id"><button type ="button" class ="btn btn-info">Деталі</button></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><button type ="button" class ="btn btn-danger">Видалити</button></a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                     <a asp-action="Details" asp-route-id="@item.Id"><button type ="button" class ="btn btn-info">Деталі</button></a>
+                    </td>
+                }
         </tr>
 }
     </tbody>
