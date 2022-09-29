@@ -249,16 +249,17 @@ namespace Automarket1.Controllers
                 car.Model = newmod;
                 if (IsUniqueEXCEL(car.SerialNumber) && IsUniqueExcelFile(carfil, car.SerialNumber))
                 {
-                    carfil.Add(car);
+                    /*
                     if (IsUniqueExcelFile(carfil, car.SerialNumber) == false) { error += "("+ i +") " + car.SerialNumber + "; "; }
                     { 
                         i++; 
                         continue; 
                     }
+                    */
                     _context.Cars.Add(car);
                 }
             }
-            if (error != null) { return error; }
+            //if (error != null) { return error; }
             return null;
         }
 
